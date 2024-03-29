@@ -1,8 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Store Mvc";
 }
+@model List<StoreMVC.Models.Produtos>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <section>
+        <h3>Promoções da semana</h3>
+        
+        <div style="margin-top:30px">
+            @foreach (var produto in Model)
+            {
+
+            <div  class= "p-2 border rounded-3 lh-1" style = "height:270px;width:250px; display:inline-block;">
+                <img src="@produto.img"  class= "border rounded-3 "   style = "height:150px;width:230px;"/>
+                    <p style = "margin-top:10px;" >   @produto.Nome   </p>
+                    <p>R$ <b>@produto.Valor.ToString("0.00")</b></p>    
+                <p class= "fs-6" >12x no cartão </p> 
+
+            </div>
+            }
+        </div>
+
+    </section>
+
+
+
+
+
 </div>
+
